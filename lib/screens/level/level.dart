@@ -36,7 +36,7 @@ class _LevelScreenState extends State<LevelScreen> {
             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: kDefaultPadding, vertical: 30),
+                    horizontal: kDefaultPadding, vertical: 20),
                 child: Column(
                   children: [
                     Text(
