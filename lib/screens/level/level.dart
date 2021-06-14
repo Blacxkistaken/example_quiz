@@ -36,8 +36,9 @@ class _LevelScreenState extends State<LevelScreen> {
             SafeArea(
               child: Padding(
                 padding: const EdgeInsets.symmetric(
-                    horizontal: kDefaultPadding, vertical: 20),
+                    horizontal: kDefaultPadding, vertical: kDefaultPadding),
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       "Hello ${widget.isim} ! ",
@@ -89,7 +90,7 @@ class _LevelScreenState extends State<LevelScreen> {
                             ),
                           ),
                           SizedBox(
-                            height: 40,
+                            height: 45,
                           ),
                           InkWell(
                             onTap: () {
@@ -120,7 +121,7 @@ class _LevelScreenState extends State<LevelScreen> {
                             ),
                           ),
                           SizedBox(
-                            height: 40,
+                            height: 45,
                           ),
                           InkWell(
                             onTap: () {

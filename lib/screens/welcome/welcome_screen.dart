@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:quiz_app/constants.dart';
 import 'package:quiz_app/screens/level/level.dart';
+import 'package:quiz_app/screens/quiz/quiz_screen.dart';
+import 'dart:io';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -9,13 +11,28 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  Future<bool> _onBackPressedd() {
+    return showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              title: Text("Do you want to quit ?"),
+              content: Text("You can solve more tests!"),
+              actions: <Widget>[
+                TextButton(
+                    onPressed: () => Navigator.pop(context, false),
+                    child: Text("Cancel")),
+                TextButton(onPressed: () => exit(0), child: Text("Yes")),
+              ],
+            ));
+  }
+
   final _mycontroller = TextEditingController();
   String message = "";
 
   @override
   Widget build(BuildContext context) {
     return new WillPopScope(
-      onWillPop: () async => false,
+      onWillPop: _onBackPressedd,
       child: Scaffold(
         body: Stack(
           children: [
